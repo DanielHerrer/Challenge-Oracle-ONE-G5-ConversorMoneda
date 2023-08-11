@@ -284,109 +284,109 @@ public class VentanaLongitud extends JFrame {
 				}
 			}
 		});
-		
-		btnConvertir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					String in = (String) comboInput.getSelectedItem();
-					BigDecimal valIn = new BigDecimal(input.getText().trim());
-					BigDecimal[] values = convertToAll(in,valIn);
-					
-					txtMm.setText(String.valueOf(values[0]));
-	            	txtCm.setText(String.valueOf(values[1]));
-	            	txtMt.setText(String.valueOf(values[2]));
-	            	txtKm.setText(String.valueOf(values[3]));
-	            	txtYardas.setText(String.valueOf(values[4]));
-	            	txtMillas.setText(String.valueOf(values[5]));
-	            	txtPies.setText(String.valueOf(values[6]));
-	            	txtPulg.setText(String.valueOf(values[7]));
-				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(VentanaLongitud.this, "Ingrese un valor válido", "Error",
-							JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		});
-		
-	}
-	
-	// Recibe el tipo de unidad, y el valor ingresado, y retorna un arreglo[8] con todos los valores de medida
-	private BigDecimal[] convertToAll(String in, BigDecimal value) {
-        BigDecimal[] values = new BigDecimal[8];
 
-		if(in.equals("Milimetros")) {
-			values[0] = value;
-            values[1] = value.divide(new BigDecimal("10")).setScale(4, RoundingMode.HALF_UP);
-            values[2] = value.divide(new BigDecimal("1000")).setScale(4, RoundingMode.HALF_UP);
-            values[3] = value.divide(new BigDecimal("1000000")).setScale(4, RoundingMode.HALF_UP);
-            values[4] = value.multiply(new BigDecimal("0.00109361")).setScale(4, RoundingMode.HALF_UP);
-            values[5] = value.multiply(new BigDecimal("6.2137e-7")).setScale(4, RoundingMode.HALF_UP);
-            values[6] = value.multiply(new BigDecimal("0.00328084")).setScale(4, RoundingMode.HALF_UP);
-            values[7] = value.multiply(new BigDecimal("0.0393701")).setScale(4, RoundingMode.HALF_UP);
-        }else if(in.equals("Centimetros")) {
-        	values[0] = value.multiply(new BigDecimal("10")).setScale(4, RoundingMode.HALF_UP);
-            values[1] = value;
-            values[2] = value.divide(new BigDecimal("100")).setScale(4, RoundingMode.HALF_UP);
-            values[3] = value.divide(new BigDecimal("100000")).setScale(4, RoundingMode.HALF_UP);
-            values[4] = value.multiply(new BigDecimal("0.0109361")).setScale(4, RoundingMode.HALF_UP);
-            values[5] = value.multiply(new BigDecimal("6.2137e-6")).setScale(4, RoundingMode.HALF_UP);
-            values[6] = value.multiply(new BigDecimal("0.0328084")).setScale(4, RoundingMode.HALF_UP);
-            values[7] = value.multiply(new BigDecimal("0.393701")).setScale(4, RoundingMode.HALF_UP);
-        }else if(in.equals("Metros")) {
-        	values[0] = value.multiply(new BigDecimal("1000")).setScale(4, RoundingMode.HALF_UP);
-            values[1] = value.multiply(new BigDecimal("100")).setScale(4, RoundingMode.HALF_UP);
-            values[2] = value;
-            values[3] = value.divide(new BigDecimal("1000")).setScale(4, RoundingMode.HALF_UP);
-            values[4] = value.multiply(new BigDecimal("1.09361")).setScale(4, RoundingMode.HALF_UP);
-            values[5] = value.divide(new BigDecimal("1609.34")).setScale(4, RoundingMode.HALF_UP);
-            values[6] = value.multiply(new BigDecimal("3.28084")).setScale(4, RoundingMode.HALF_UP);
-            values[7] = value.multiply(new BigDecimal("39.3701")).setScale(4, RoundingMode.HALF_UP);
-        }else if(in.equals("Kilometros")) {
-        	values[0] = value.multiply(new BigDecimal("1000000")).setScale(4, RoundingMode.HALF_UP);
-            values[1] = value.multiply(new BigDecimal("100000")).setScale(4, RoundingMode.HALF_UP);
-            values[2] = value.multiply(new BigDecimal("1000")).setScale(4, RoundingMode.HALF_UP);
-            values[3] = value;
-            values[4] = value.multiply(new BigDecimal("1093.61")).setScale(4, RoundingMode.HALF_UP);
-            values[5] = value.multiply(new BigDecimal("0.621371")).setScale(4, RoundingMode.HALF_UP);
-            values[6] = value.multiply(new BigDecimal("3280.84")).setScale(4, RoundingMode.HALF_UP);
-            values[7] = value.multiply(new BigDecimal("39370.1")).setScale(4, RoundingMode.HALF_UP);
-        }else if(in.equals("Yardas")) {
-        	values[0] = value.multiply(new BigDecimal("914.4")).setScale(4, RoundingMode.HALF_UP);
-            values[1] = value.multiply(new BigDecimal("91.44")).setScale(4, RoundingMode.HALF_UP);
-            values[2] = value.multiply(new BigDecimal("0.9144")).setScale(4, RoundingMode.HALF_UP);
-            values[3] = value.multiply(new BigDecimal("0.0009144")).setScale(4, RoundingMode.HALF_UP);
-            values[4] = value;
-            values[5] = value.multiply(new BigDecimal("0.000568182")).setScale(4, RoundingMode.HALF_UP);
-            values[6] = value.multiply(new BigDecimal("3")).setScale(4, RoundingMode.HALF_UP);
-            values[7] = value.multiply(new BigDecimal("36")).setScale(4, RoundingMode.HALF_UP);
-        }else if(in.equals("Millas")) {
-        	values[0] = value.multiply(new BigDecimal("1609344")).setScale(4, RoundingMode.HALF_UP);
-            values[1] = value.multiply(new BigDecimal("160934.4")).setScale(4, RoundingMode.HALF_UP);
-            values[2] = value.multiply(new BigDecimal("1609.341")).setScale(4, RoundingMode.HALF_UP);
-            values[3] = value.multiply(new BigDecimal("1.60934")).setScale(4, RoundingMode.HALF_UP);
-            values[4] = value.multiply(new BigDecimal("1760")).setScale(4, RoundingMode.HALF_UP);
-            values[5] = value;
-            values[6] = value.multiply(new BigDecimal("5280")).setScale(4, RoundingMode.HALF_UP);
-            values[7] = value.multiply(new BigDecimal("63360")).setScale(4, RoundingMode.HALF_UP);
-        }else if(in.equals("Pies")) {
-        	values[0] = value.multiply(new BigDecimal("304.8")).setScale(4, RoundingMode.HALF_UP);
-            values[1] = value.multiply(new BigDecimal("30.48")).setScale(4, RoundingMode.HALF_UP);
-            values[2] = value.multiply(new BigDecimal("0.3048")).setScale(4, RoundingMode.HALF_UP);
-            values[3] = value.multiply(new BigDecimal("0.0003048")).setScale(4, RoundingMode.HALF_UP);
-            values[4] = value.multiply(new BigDecimal("0.333333")).setScale(4, RoundingMode.HALF_UP);
-            values[5] = value.multiply(new BigDecimal("0.000189394")).setScale(4, RoundingMode.HALF_UP);
-            values[6] = value;
-            values[7] = value.multiply(new BigDecimal("12")).setScale(4, RoundingMode.HALF_UP);
-        }else if(in.equals("Pulgadas")) {
-        	values[0] = value.multiply(new BigDecimal("25.4")).setScale(4, RoundingMode.HALF_UP);
-            values[1] = value.multiply(new BigDecimal("2.54")).setScale(4, RoundingMode.HALF_UP);
-            values[2] = value.multiply(new BigDecimal("0.0254")).setScale(4, RoundingMode.HALF_UP);
-            values[3] = value.multiply(new BigDecimal("0.0000254")).setScale(4, RoundingMode.HALF_UP);
-            values[4] = value.multiply(new BigDecimal("0.0277778")).setScale(4, RoundingMode.HALF_UP);
-            values[5] = value.multiply(new BigDecimal("0.0000157828")).setScale(4, RoundingMode.HALF_UP);
-            values[6] = value.multiply(new BigDecimal("0.0833333")).setScale(4, RoundingMode.HALF_UP);
-            values[7] = value;
-        }
-        
-        return values;
-    }
+		btnConvertir.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        try {
+		            String in = (String) comboInput.getSelectedItem();
+		            Long valIn = Long.parseLong(input.getText().trim());
+		            Long[] values = convertToAll(in, valIn);
+
+		            txtMm.setText(String.valueOf(values[0]));
+		            txtCm.setText(String.valueOf(values[1]));
+		            txtMt.setText(String.valueOf(values[2]));
+		            txtKm.setText(String.valueOf(values[3]));
+		            txtYardas.setText(String.valueOf(values[4]));
+		            txtMillas.setText(String.valueOf(values[5]));
+		            txtPies.setText(String.valueOf(values[6]));
+		            txtPulg.setText(String.valueOf(values[7]));
+		        } catch (NumberFormatException ex) {
+		            JOptionPane.showMessageDialog(VentanaLongitud.this, "Ingrese un valor válido", "Error",
+		                    JOptionPane.ERROR_MESSAGE);
+		        }
+		    }
+		});
+	
+	}
+
+	private Long[] convertToAll(String in, Long value) {
+	    Long[] values = new Long[8];
+
+	    if (in.equals("Milimetros")) {
+	        values[0] = value;
+	        values[1] = value / 10;
+	        values[2] = value / 1000;
+	        values[3] = value / 1000000;
+	        values[4] = Math.round(value * 0.00109361);
+	        values[5] = Math.round(value * 6.2137e-7);
+	        values[6] = Math.round(value * 0.00328084);
+	        values[7] = Math.round(value * 0.0393701);
+	    } else if (in.equals("Centimetros")) {
+	        values[0] = value * 10;
+	        values[1] = value;
+	        values[2] = value / 100;
+	        values[3] = value / 100000;
+	        values[4] = Math.round(value * 0.0109361);
+	        values[5] = Math.round(value * 6.2137e-6);
+	        values[6] = Math.round(value * 0.0328084);
+	        values[7] = Math.round(value * 0.393701);
+	    } else if (in.equals("Metros")) {
+	        values[0] = value * 1000;
+	        values[1] = value * 100;
+	        values[2] = value;
+	        values[3] = value / 1000;
+	        values[4] = Math.round(value * 1.09361);
+	        values[5] = Math.round(value / 1609.34);
+	        values[6] = Math.round(value * 3.28084);
+	        values[7] = Math.round(value * 39.3701);
+	    } else if (in.equals("Kilometros")) {
+	        values[0] = value * 1000000;
+	        values[1] = value * 100000;
+	        values[2] = value * 1000;
+	        values[3] = value;
+	        values[4] = Math.round(value * 1093.61);
+	        values[5] = Math.round(value * 0.621371);
+	        values[6] = Math.round(value * 3280.84);
+	        values[7] = Math.round(value * 39370.1);
+	    } else if (in.equals("Yardas")) {
+	        values[0] = Math.round(value * 914.4);
+	        values[1] = Math.round(value * 91.44);
+	        values[2] = Math.round(value * 0.9144);
+	        values[3] = Math.round(value * 0.0009144);
+	        values[4] = value;
+	        values[5] = Math.round(value * 0.000568182);
+	        values[6] = (long) Math.round(value * 3);
+	        values[7] = (long) Math.round(value * 36);
+	    } else if (in.equals("Millas")) {
+	        values[0] = (long) Math.round(value * 1609344);
+	        values[1] = Math.round(value * 160934.4);
+	        values[2] = Math.round(value * 1609.341);
+	        values[3] = Math.round(value * 1.60934);
+	        values[4] = (long) Math.round(value * 1760);
+	        values[5] = value;
+	        values[6] = (long) Math.round(value * 5280);
+	        values[7] = (long) Math.round(value * 63360);
+	    } else if (in.equals("Pies")) {
+	        values[0] = Math.round(value * 304.8);
+	        values[1] = Math.round(value * 30.48);
+	        values[2] = Math.round(value * 0.3048);
+	        values[3] = Math.round(value * 0.0003048);
+	        values[4] = Math.round(value * 0.333333);
+	        values[5] = Math.round(value * 0.000189394);
+	        values[6] = value;
+	        values[7] = (long) Math.round(value * 12);
+	    } else if (in.equals("Pulgadas")) {
+	        values[0] = Math.round(value * 25.4);
+	        values[1] = Math.round(value * 2.54);
+	        values[2] = Math.round(value * 0.0254);
+	        values[3] = Math.round(value * 0.0000254);
+	        values[4] = Math.round(value * 0.0277778);
+	        values[5] = Math.round(value * 0.0000157828);
+	        values[6] = Math.round(value * 0.0833333);
+	        values[7] = value;
+	    }
+
+	    return values;
+	}
+
 }
