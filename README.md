@@ -16,8 +16,9 @@ git clone https://github.com/DanielHerrer/Challenge-Oracle-ONE-G5-ConversorMoned
 
 ## Tecnologías Utilizadas
 
-- Java
+- Java 1.8
 - Swing
 - API (https://www.exchangerate-api.com/)
+- Eclipse (con WindowBuilder)
 
 ## Licencia © [Daniel Franco Herrera](https://www.linkedin.com/in/danielfrancoherrera/)
