@@ -58,10 +58,10 @@ public class VentanaLongitud extends JFrame {
 		lblInput.setBounds(21, 27, 98, 16);
 		panel_1.add(lblInput);
 		
-		JComboBox comboInput = new JComboBox();
+		JComboBox<String> comboInput = new JComboBox<>();
 		lblInput.setLabelFor(comboInput);
 		comboInput.setBounds(21, 46, 98, 25);
-		comboInput.setModel(new DefaultComboBoxModel(new String[] {"Milimetros", "Centimetros", "Metros", "Kilometros", "Yardas", "Millas", "Pies", "Pulgadas"}));
+		comboInput.setModel(new DefaultComboBoxModel<String>(new String[] {"Milimetros", "Centimetros", "Metros", "Kilometros", "Yardas", "Millas", "Pies", "Pulgadas"}));
 		panel_1.add(comboInput);
 		
 		input = new JTextField();

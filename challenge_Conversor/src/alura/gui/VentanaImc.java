@@ -38,7 +38,6 @@ public class VentanaImc extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JPanel panel = new JPanel();
-		FlowLayout flowLayout_1 = (FlowLayout) panel.getLayout();
 		panel.setBounds(0, 142, 499, 29);
 		contentPane.add(panel);
 		

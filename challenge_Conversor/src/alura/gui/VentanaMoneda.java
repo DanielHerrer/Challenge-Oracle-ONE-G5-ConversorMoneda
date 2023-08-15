@@ -32,11 +32,11 @@ public class VentanaMoneda extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField inputMoneda;
-	private JComboBox comboMonedasOut;
+	private JComboBox<String> comboMonedasOut;
 	private JTextField outputMoneda;
 	private JLabel lblInput;
 	private JLabel lblOutput;
-	private JComboBox comboMonedasIn;
+	private JComboBox<String> comboMonedasIn;
 	private JButton btnConvertir;
 	private JButton btnRegresar;
 	private JButton btnSalir;
@@ -81,7 +81,7 @@ public class VentanaMoneda extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 13));
 
-		comboMonedasIn = new JComboBox();
+		comboMonedasIn = new JComboBox<>();
 		lblInput.setLabelFor(comboMonedasIn);
 		comboMonedasIn.addItemListener(new ItemListener() {
 		    @Override
@@ -116,7 +116,7 @@ public class VentanaMoneda extends JFrame {
 		});
 		
 		panel_2.add(comboMonedasIn);
-		comboMonedasIn.setModel(new DefaultComboBoxModel(new String[] { "ARS", "BRL", "MXN", "COP", "CLP", "UYU", "GBP", "USD", "EUR", "JPY" }));
+		comboMonedasIn.setModel(new DefaultComboBoxModel<String>(new String[] { "ARS", "BRL", "MXN", "COP", "CLP", "UYU", "GBP", "USD", "EUR", "JPY" }));
 		
 		simboloDineroIn = new JLabel("₱");
 		panel_2.add(simboloDineroIn);
@@ -125,7 +125,7 @@ public class VentanaMoneda extends JFrame {
 		panel_2.add(inputMoneda);
 		inputMoneda.setColumns(15);
 
-		comboMonedasOut = new JComboBox();
+		comboMonedasOut = new JComboBox<>();
 		lblOutput.setLabelFor(comboMonedasOut);
 		panel_2.add(comboMonedasOut);
 		
@@ -161,7 +161,7 @@ public class VentanaMoneda extends JFrame {
 		    }
 		});
 		
-		comboMonedasOut.setModel(new DefaultComboBoxModel(new String[] { "ARS", "BRL", "MXN", "COP", "CLP", "UYU", "GBP", "USD", "EUR", "JPY" }));
+		comboMonedasOut.setModel(new DefaultComboBoxModel<String>(new String[] { "ARS", "BRL", "MXN", "COP", "CLP", "UYU", "GBP", "USD", "EUR", "JPY" }));
 		
 		simboloDineroOut = new JLabel("₱");
 		panel_2.add(simboloDineroOut);

@@ -94,9 +94,9 @@ public class VentanaPeso extends JFrame {
 		lblTipoDeUnidad.setBounds(43, 24, 85, 16);
 		panel_1.add(lblTipoDeUnidad);
 		
-		JComboBox comboInput = new JComboBox();
+		JComboBox<String> comboInput = new JComboBox<>();
 		comboInput.setBounds(43, 43, 98, 25);
-		comboInput.setModel(new DefaultComboBoxModel(new String[] {"Gramos", "Kilogramos", "Libras", "Onzas"}));
+		comboInput.setModel(new DefaultComboBoxModel<String>(new String[] {"Gramos", "Kilogramos", "Libras", "Onzas"}));
 		comboInput.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {

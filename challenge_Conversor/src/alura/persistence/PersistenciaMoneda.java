@@ -1,17 +1,18 @@
 package alura.persistence;
 
+/**
+ * Se añaden los siguientes 'import' del archivo extensión .JAR 
+ * que estan en la carpeta /lib y lo añadimos al Build Path
+ */
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-/**
- * Se añaden los sig. import del .JAR en /lib en el Path
- */
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class PersistenciaMoneda {
     private static final String API_URL = "https://api.exchangerate-api.com/v4/latest/"; // URL de la API de monedas

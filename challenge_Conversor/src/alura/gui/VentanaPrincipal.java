@@ -1,7 +1,5 @@
 package alura.gui;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -47,10 +45,10 @@ public class VentanaPrincipal extends JFrame {
 		lblElegir.setBounds(12, 116, 146, 14);
 		contentPane.add(lblElegir);
 
-		JComboBox comboConversiones = new JComboBox();
+		JComboBox<String> comboConversiones = new JComboBox<>();
 		lblElegir.setLabelFor(comboConversiones);
 		comboConversiones.setBounds(163, 113, 190, 20);
-		comboConversiones.setModel(new DefaultComboBoxModel(new String[] { 
+		comboConversiones.setModel(new DefaultComboBoxModel<String>(new String[] { 
 				"Conversor de Moneda", "Conversor de Temperatura", "Conversor de Longitud",
 				 "Conversor de Peso", "Conversor de Tiempos", "Conversor de IMC" }));
 		contentPane.add(comboConversiones);

@@ -97,7 +97,7 @@ public class VentanaTiempo extends JFrame {
 		JLabel lblInput = new JLabel("Ingrese su unidad:");
 		panel_1.add(lblInput);
 		
-		JComboBox comboInput = new JComboBox();
+		JComboBox<String> comboInput = new JComboBox<>();
 		comboInput.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
@@ -180,7 +180,7 @@ public class VentanaTiempo extends JFrame {
 			}
 		});
 		lblInput.setLabelFor(comboInput);
-		comboInput.setModel(new DefaultComboBoxModel(new String[] {"Milisegundos", "Segundos", "Minutos", "Horas", "Dias", "Semanas", "Meses", "Anios"}));
+		comboInput.setModel(new DefaultComboBoxModel<String>(new String[] {"Milisegundos", "Segundos", "Minutos", "Horas", "Dias", "Semanas", "Meses", "Anios"}));
 		panel_1.add(comboInput);
 		
 		input = new JTextField();

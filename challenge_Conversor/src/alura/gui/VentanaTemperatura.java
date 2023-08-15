@@ -45,8 +45,8 @@ public class VentanaTemperatura extends JFrame {
 		panel_1.setBounds(0, 105, 499, 47);
 		contentPane.add(panel_1);
 		
-		JComboBox comboInput = new JComboBox();
-		comboInput.setModel(new DefaultComboBoxModel(new String[] {"Fahrenheit", "Celsius"}));
+		JComboBox<String>comboInput = new JComboBox<>();
+		comboInput.setModel(new DefaultComboBoxModel<String>(new String[] {"Fahrenheit", "Celsius"}));
 		panel_1.add(comboInput);
 		
 		JPanel panel_2 = new JPanel();
