@@ -19,7 +19,7 @@ git clone https://github.com/DanielHerrer/Challenge-Oracle-ONE-G5-ConversorMoned
 
 - Eclipse
 - Plug-in Window Builder
-- Java 1.8
+- Java 
 - Swing
 - API (https://www.exchangerate-api.com/)
 
