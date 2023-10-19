@@ -20,7 +20,7 @@ Trabajando con Java y librerías Swing esta aplicación fue realizada como parte
 
 <img src="demo_conversor.gif" alt="Demostración de la aplicación" width="600"/>
 
-## :question: Cómo usar el Sistema de Reservas
+## :question: Cómo usar el Conversor Alura
 
 <b>1.</b> Empieza por clonar el repositorio en tu máquina local usando el siguiente comando:
 ```
